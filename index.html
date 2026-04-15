@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球AI晨报</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --tag-bg: #1f6feb33;
+      --tag-text: #58a6ff;
+      --success: #3fb950;
+      --warning: #d29922;
+      --danger: #f85149;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 40px 0 30px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff, #f778ba);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .header p { color: var(--text-muted); font-size: 0.95rem; }
+    .header .update-time { color: var(--warning); font-size: 0.85rem; margin-top: 6px; }
+
+    /* Report Card */
+    .report-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .report-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    .report-card .date {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .report-card .date span { color: var(--accent); }
+    .report-card .summary {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .report-card .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Empty & Loading */
+    .loading, .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    .loading .spinner, .empty .icon { font-size: 2rem; margin-bottom: 16px; }
+    .spinner {
+      display: inline-block;
+      width: 32px; height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌍 全球AI晨报</h1>
+      <p>每日精选全球AI/Agent技术动态 · 创业项目 · 投资分析 · 中国创业机会</p>
+      <div class="update-time" id="updateTime"></div>
+    </div>
+    <div id="reportList">
+      <div class="loading"><div class="spinner"></div><p style="margin-top:12px">正在加载报告列表...</p></div>
+    </div>
+    <div class="footer">
+      <p>数据来源：Anthropic · OpenAI · a16z · CB Insights · 清华大学 · 36氪 · 新浪财经 等</p>
+      <p style="margin-top:4px;">全球AI晨报 · 每日自动生成</p>
+    </div>
+  </div>
+  <script>
+    // Report registry — auto-updated by build script
+    const REPORTS = [
+  {
+    "date": "2026-04-15",
+    "file": "2026-04-15.md",
+    "summary": null
+  }
+];
+
+    const listEl = document.getElementById('reportList');
+
+    document.getElementById('updateTime').textContent =
+      '最近更新：' + new Date().toLocaleDateString('zh-CN', { year:'numeric', month:'long', day:'numeric' });
+
+    function renderReports(reports) {
+      if (!reports || reports.length === 0) {
+        listEl.innerHTML = '<div class="empty"><div class="icon">📭</div><p>暂无晨报，请稍后再来</p></div>';
+        return;
+      }
+      // Sort by date descending
+      reports.sort((a, b) => b.date.localeCompare(a.date));
+      listEl.innerHTML = '';
+      reports.forEach(r => {
+        const card = document.createElement('a');
+        card.className = 'report-card';
+        card.href = 'report.html?file=' + encodeURIComponent(r.file);
+        card.innerHTML = `
+          <div class="date">📅 <span>${r.date}</span> 全球AI晨报</div>
+          <div class="summary">${r.summary || '全球AI/Agent技术动态 · 创业项目 · 投资分析 · 中国创业机会深度分析'}</div>
+          <div class="tags">
+            <span class="tag">AI/Agent</span>
+            <span class="tag">创业项目</span>
+            <span class="tag">投资分析</span>
+            <span class="tag">中国机会</span>
+            <span class="tag">OPC</span>
+          </div>
+        `;
+        listEl.appendChild(card);
+      });
+    }
+
+    renderReports(REPORTS);
+  </script>
+</body>
+</html>
