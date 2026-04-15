@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球AI晨报 — 每日AI/Agent动态·创业·投资·中国机会</title>
+  <meta name="description" content="每日精选全球AI/Agent技术动态、创业项目、投资分析、中国AI创业机会深度分析">
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --surface: #111827;
+      --surface2: #1a2332;
+      --border: #1e2d3d;
+      --border-light: #2a3a4a;
+      --text: #e2e8f0;
+      --text-muted: #8899aa;
+      --text-dim: #5a6a7a;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-bg: rgba(59,130,246,0.08);
+      --green: #10b981;
+      --green-bg: rgba(16,185,129,0.1);
+      --orange: #f59e0b;
+      --orange-bg: rgba(245,158,11,0.1);
+      --red: #ef4444;
+      --purple: #a78bfa;
+      --purple-bg: rgba(167,139,250,0.1);
+      --pink: #f472b6;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Noto Sans SC', 'PingFang SC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ===== Header ===== */
+    .hero {
+      background: linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 20px 36px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-bg);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .hero .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .hero .update-info {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* ===== Search & Filter ===== */
+    .toolbar {
+      max-width: 960px;
+      margin: -20px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 0 16px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--accent); }
+    .search-box svg { flex-shrink:0; color:var(--text-dim); }
+    .search-box input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      padding: 12px 10px;
+      font-family: inherit;
+    }
+    .search-box input::placeholder { color: var(--text-dim); }
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent-light); }
+    .filter-btn.active { background: var(--accent-bg); border-color: var(--accent); color: var(--accent-light); }
+
+    /* ===== Stats ===== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .num { font-size: 1.6rem; font-weight: 700; color: var(--accent-light); }
+    .stat-card .label { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+
+    /* ===== Month Group ===== */
+    .month-group { margin-bottom: 32px; }
+    .month-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .month-header .month-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .month-header .count {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 1px 8px;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+
+    /* ===== Report Card ===== */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px 40px; }
+    .report-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .report-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--purple));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .report-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(59,130,246,0.08);
+      transform: translateY(-2px);
+    }
+    .report-card:hover::before { opacity: 1; }
+    .report-card.latest { border-color: rgba(59,130,246,0.3); }
+    .report-card.latest::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .card-date {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .card-date .weekday { font-weight: 400; color: var(--text-muted); font-size: 0.85rem; margin-left: 6px; }
+    .latest-tag {
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .card-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+    .card-meta span { display: flex; align-items: center; gap: 4px; }
+    .card-summary {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .highlight-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .highlight-chip .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .card-sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .section-tag {
+      background: var(--accent-bg);
+      color: var(--accent-light);
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    /* ===== Empty / No Results ===== */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+    }
+    .no-results .icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.78rem;
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat-card { padding: 12px 8px; }
+      .stat-card .num { font-size: 1.3rem; }
+      .report-card { padding: 16px 18px; }
+      .card-date { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-badge"><span class="dot"></span> 每日更新</div>
+    <h1>全球AI晨报</h1>
+    <p class="subtitle">AI/Agent 技术动态 · 创业项目 · 投资分析 · 中国创业机会</p>
+    <p class="update-info" id="updateInfo"></p>
+  </div>
+
+  <div class="toolbar">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="搜索晨报内容、关键词、日期..." autocomplete="off">
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="tech">技术动态</button>
+      <button class="filter-btn" data-filter="startup">创业项目</button>
+      <button class="filter-btn" data-filter="invest">投资分析</button>
+      <button class="filter-btn" data-filter="china">中国机会</button>
+    </div>
+    <div class="stats-row" id="statsRow"></div>
+  </div>
+
+  <div class="container">
+    <div id="reportList"></div>
+  </div>
+
+  <div class="footer">
+    <p>数据来源：Anthropic · OpenAI · a16z · CB Insights · 清华大学 · 36氪 · 新浪财经 等</p>
+    <p style="margin-top:4px;">
+      全球AI晨报 · 每日自动生成 · 
+      <a href="https://github.com/corinwe/ai-morning-report-site" target="_blank">GitHub</a>
+    </p>
+  </div>
+
+<script>
+const REPORTS = REPORTS_JSON_PLACEHOLDER;
+
+const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
+const MONTHS = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+// Update info
+document.getElementById('updateInfo').textContent =
+  '已收录 ' + REPORTS.length + ' 期晨报 · 最近更新：' + formatDate(REPORTS[0]?.date);
+
+function formatDate(d) {
+  if (!d) return '';
+  const dt = new Date(d + 'T00:00:00');
+  return dt.getFullYear() + '年' + (dt.getMonth()+1) + '月' + dt.getDate() + '日';
+}
+
+function getWeekday(d) {
+  if (!d) return '';
+  return WEEKDAYS[new Date(d + 'T00:00:00').getDay()];
+}
+
+function getMonthKey(d) {
+  if (!d) return '';
+  const dt = new Date(d + 'T00:00:00');
+  return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0');
+}
+
+function getMonthLabel(key) {
+  const [y, m] = key.split('-');
+  return y + '年' + MONTHS[parseInt(m)-1];
+}
+
+// Stats
+function renderStats(reports) {
+  const totalWords = reports.reduce((s, r) => s + (r.word_count || 0), 0);
+  const totalSignals = reports.reduce((s, r) => s + (r.highlights?.length || 0), 0);
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat-card"><div class="num">${reports.length}</div><div class="label">收录期数</div></div>
+    <div class="stat-card"><div class="num">${(totalWords/1000).toFixed(1)}k</div><div class="label">总字数</div></div>
+    <div class="stat-card"><div class="num">${totalSignals}</div><div class="label">关键信号</div></div>
+  `;
+}
+
+// Render
+function renderReports(reports, filter = 'all', query = '') {
+  const listEl = document.getElementById('reportList');
+  let filtered = [...reports];
+
+  // Search filter
+  if (query) {
+    const q = query.toLowerCase();
+    filtered = filtered.filter(r =>
+      r.date.includes(q) ||
+      (r.summary || '').toLowerCase().includes(q) ||
+      (r.highlights || []).some(h => h.title.toLowerCase().includes(q) || (h.desc||'').toLowerCase().includes(q)) ||
+      (r.sections || []).some(s => s.title.toLowerCase().includes(q))
+    );
+  }
+
+  // Category filter
+  if (filter !== 'all') {
+    const filterMap = {
+      'tech': ['技术', '模型', 'Agent', '动态'],
+      'startup': ['创业', 'OPC', '融资', '项目'],
+      'invest': ['投资', '量化', '基金', '交易'],
+      'china': ['中国', '本土化', '场景', '创业机会']
+    };
+    const keywords = filterMap[filter] || [];
+    filtered = filtered.filter(r => {
+      const text = (r.summary || '') + ' ' + (r.sections || []).map(s=>s.title).join(' ') + ' ' + (r.highlights || []).map(h=>h.title+' '+h.desc).join(' ');
+      return keywords.some(kw => text.includes(kw));
+    });
+  }
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>没有匹配的晨报</p></div>';
+    return;
+  }
+
+  // Group by month
+  const groups = {};
+  filtered.forEach(r => {
+    const key = getMonthKey(r.date);
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(r);
+  });
+
+  const sortedKeys = Object.keys(groups).sort().reverse();
+  let html = '';
+
+  sortedKeys.forEach(key => {
+    html += `<div class="month-group">`;
+    html += `<div class="month-header"><span class="month-label">${getMonthLabel(key)}</span><span class="count">${groups[key].length}期</span></div>`;
+    groups[key].forEach((r, idx) => {
+      const isLatest = (r.date === reports[0]?.date);
+      const highlightColors = ['var(--accent)', 'var(--green)', 'var(--orange)', 'var(--purple)', 'var(--pink)'];
+      html += `
+        <a class="report-card${isLatest ? ' latest' : ''}" href="report.html?file=${encodeURIComponent(r.file)}">
+          <div class="card-top">
+            <div class="card-date">${r.date}<span class="weekday">${getWeekday(r.date)}</span></div>
+            ${isLatest ? '<span class="latest-tag">LATEST</span>' : ''}
+          </div>
+          <div class="card-meta">
+            <span>📝 ${r.word_count ? (r.word_count/1000).toFixed(1)+'k字' : '-'}</span>
+            <span>📂 ${r.sections ? r.sections.length : 0}个板块</span>
+            <span>⚡ ${r.highlights ? r.highlights.length : 0}条信号</span>
+          </div>
+          <div class="card-summary">${r.summary || '全球AI/Agent技术动态 · 创业项目 · 投资分析 · 中国创业机会深度分析'}</div>
+          ${(r.highlights && r.highlights.length) ? `
+          <div class="card-highlights">
+            ${r.highlights.slice(0, 4).map((h, i) => `
+              <span class="highlight-chip">
+                <span class="dot" style="background:${highlightColors[i % highlightColors.length]}"></span>
+                ${h.title}
+              </span>
+            `).join('')}
+          </div>` : ''}
+          <div class="card-sections">
+            ${(r.sections || []).map(s => `<span class="section-tag">${s.title}</span>`).join('')}
+          </div>
+        </a>
+      `;
+    });
+    html += `</div>`;
+  });
+
+  listEl.innerHTML = html;
+}
+
+// Init
+renderStats(REPORTS);
+renderReports(REPORTS);
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderReports(REPORTS, btn.dataset.filter, document.getElementById('searchInput').value);
+  });
+});
+
+// Search
+let searchTimer;
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+    renderReports(REPORTS, activeFilter, e.target.value);
+  }, 200);
+});
+</script>
+</body>
+</html>
