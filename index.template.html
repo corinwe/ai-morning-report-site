@@ -449,6 +449,7 @@ function renderReports(reports, filter = 'all', query = '') {
             <span>📝 ${r.word_count ? (r.word_count/1000).toFixed(1)+'k字' : '-'}</span>
             <span>📂 ${r.sections ? r.sections.length : 0}个板块</span>
             <span>⚡ ${r.highlights ? r.highlights.length : 0}条信号</span>
+            ${r.has_audio ? '<span>🎙️ 语音</span>' : ''}
           </div>
           <div class="card-summary">${r.summary || '全球AI/Agent技术动态 · 创业项目 · 投资分析 · 中国创业机会深度分析'}</div>
           ${(r.highlights && r.highlights.length) ? `

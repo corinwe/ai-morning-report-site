@@ -290,6 +290,92 @@
     }
     .error-state a { color: var(--accent-light); }
 
+    /* ===== Audio Player ===== */
+    .audio-player {
+      background: linear-gradient(135deg, #111827, #1a2332);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .audio-player .play-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      box-shadow: 0 2px 12px rgba(59,130,246,0.3);
+    }
+    .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 4px 18px rgba(59,130,246,0.4); }
+    .audio-player .play-btn:active { transform: scale(0.96); }
+    .audio-player .info { flex: 1; min-width: 0; }
+    .audio-player .info .label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .audio-player .info .label .voice-icon { font-size: 0.85rem; }
+    .audio-player .progress-wrap {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      margin-top: 6px;
+    }
+    .audio-player .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+    .audio-player .time {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .audio-player .speed-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .audio-player .speed-btn:hover { border-color: var(--accent); color: var(--accent-light); }
+    .audio-player .speed-btn.active { background: var(--accent-bg); border-color: var(--accent); color: var(--accent-light); }
+    .audio-no-player {
+      background: var(--surface);
+      border: 1px dashed var(--border-light);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
     /* ===== Back to Top ===== */
     .back-top {
       position: fixed;
@@ -349,6 +435,8 @@
     </aside>
     <!-- Content -->
     <div class="content">
+      <!-- Audio Player -->
+      <div id="audioSection"></div>
       <div id="mdContent" class="md-body">
         <div class="loading-state"><div class="spinner"></div><p>正在加载晨报...</p></div>
       </div>
@@ -461,8 +549,103 @@ document.getElementById('backTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ===== Audio Player =====
+let audioEl = null;
+let isPlaying = false;
+let playbackRate = 1.0;
+
+function initAudioPlayer() {
+  const section = document.getElementById('audioSection');
+  if (!currentDate) { section.innerHTML = ''; return; }
+
+  const audioUrl = 'audio/' + currentDate + '.mp3';
+
+  // Check if audio exists
+  fetch(audioUrl, { method: 'HEAD' }).then(r => {
+    if (r.ok) {
+      renderPlayer(section, audioUrl);
+    } else {
+      section.innerHTML = '<div class="audio-no-player">🎙️ 语音播报生成中，稍后刷新即可收听</div>';
+    }
+  }).catch(() => {
+    section.innerHTML = '<div class="audio-no-player">🎙️ 语音播报暂不可用</div>';
+  });
+}
+
+function renderPlayer(section, audioUrl) {
+  section.innerHTML = `
+    <div class="audio-player">
+      <button class="play-btn" id="playBtn" title="播放/暂停">▶</button>
+      <div class="info">
+        <div class="label"><span class="voice-icon">🎙️</span> 语音播报 · ${currentDate} AI晨报</div>
+        <div class="progress-wrap" id="progressWrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="time"><span id="currentTime">0:00</span><span id="totalTime">--:--</span></div>
+      </div>
+      <button class="speed-btn" id="speedBtn" title="播放速度">1x</button>
+    </div>
+  `;
+
+  audioEl = new Audio(audioUrl);
+  audioEl.preload = 'metadata';
+  audioEl.playbackRate = playbackRate;
+
+  audioEl.addEventListener('loadedmetadata', () => {
+    document.getElementById('totalTime').textContent = formatTime(audioEl.duration);
+  });
+  audioEl.addEventListener('timeupdate', () => {
+    const pct = (audioEl.currentTime / audioEl.duration) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('currentTime').textContent = formatTime(audioEl.currentTime);
+  });
+  audioEl.addEventListener('ended', () => {
+    isPlaying = false;
+    document.getElementById('playBtn').textContent = '▶';
+  });
+
+  document.getElementById('playBtn').addEventListener('click', togglePlay);
+  document.getElementById('speedBtn').addEventListener('click', cycleSpeed);
+  document.getElementById('progressWrap').addEventListener('click', (e) => {
+    if (!audioEl.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audioEl.currentTime = pct * audioEl.duration;
+  });
+}
+
+function togglePlay() {
+  if (!audioEl) return;
+  if (isPlaying) {
+    audioEl.pause();
+    document.getElementById('playBtn').textContent = '▶';
+  } else {
+    audioEl.play();
+    document.getElementById('playBtn').textContent = '⏸';
+  }
+  isPlaying = !isPlaying;
+}
+
+function cycleSpeed() {
+  const speeds = [1.0, 1.25, 1.5, 2.0];
+  const idx = speeds.indexOf(playbackRate);
+  playbackRate = speeds[(idx + 1) % speeds.length];
+  if (audioEl) audioEl.playbackRate = playbackRate;
+  const btn = document.getElementById('speedBtn');
+  btn.textContent = playbackRate + 'x';
+  btn.classList.toggle('active', playbackRate !== 1.0);
+}
+
+function formatTime(sec) {
+  if (!sec || isNaN(sec)) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return m + ':' + String(s).padStart(2, '0');
+}
+
 // ===== Init =====
 initNav();
+initAudioPlayer();
 loadReport();
 </script>
 </body>
