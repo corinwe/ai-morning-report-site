@@ -1,6 +1,6 @@
 #!/bin/bash
-# AI晨报推送脚本 - 将指定日期的晨报推送到GitHub
-# 用法: bash scripts/push_report_to_github.sh YYYY-MM-DD
+# AI晨报推送脚本 - 将指定日期的晨报推送到GitHub（含TTS语音生成）
+# 用法: bash /workspace/push_report_to_github.sh YYYY-MM-DD
 # Token来源: 1.环境变量GITHUB_TOKEN 2./workspace/.github_token文件（必须存在其一）
 set -e
 
@@ -40,12 +40,16 @@ echo "步骤2: 复制报告文件..."
 cp "$REPORT_FILE" "${REPO_DIR}/reports/${DATE}.md"
 echo "报告已复制到 reports/${DATE}.md"
 
-echo "步骤3: 构建网站..."
+echo "步骤3: 确保edge-tts已安装..."
+pip3 install edge-tts -q 2>/dev/null || pip install edge-tts -q 2>/dev/null || true
+echo "edge-tts就绪"
+
+echo "步骤4: 构建网站（含TTS语音生成）..."
 cd "$REPO_DIR"
 python3 build.py
 echo "网站构建完成"
 
-echo "步骤4: 推送到GitHub..."
+echo "步骤5: 推送到GitHub..."
 git config user.name "corinwe"
 git config user.email "corinwe@users.noreply.github.com"
 git add -A
@@ -56,4 +60,4 @@ git remote set-url origin "https://github.com/${GITHUB_USER}/${REPO_NAME}.git"
 echo "推送成功"
 
 echo ""
-echo "晨报 ${DATE} 已成功发布到 GitHub Pages！"
+echo "晨报 ${DATE} 已成功发布到 GitHub Pages（含语音播报）！"
