@@ -359,12 +359,30 @@ def build_all(reports):
         print(f"   {audio_mark} {r['date']} | {r['word_count']}字 | {len(r['sections'])}板块 | {len(r['highlights'])}信号")
 
 if __name__ == '__main__':
-    reports = scan_reports()
+    import sys
 
-    # Generate TTS audio for reports without audio
-    generate_all_tts(reports)
+    # Parse command line args
+    if '--tts' in sys.argv or '--generate-audio' in sys.argv:
+        # Force TTS generation mode
+        print("🎙️ TTS语音生成模式")
+        reports = scan_reports()
+        generate_all_tts(reports)
+        reports = scan_reports()
+        build_all(reports)
+    elif '--help' in sys.argv or '-h' in sys.argv:
+        print("用法: python3 build.py [选项]")
+        print("  --tts, --generate-audio  为缺少语音的报告生成TTS")
+        print("  --help, -h               显示帮助信息")
+        print("")
+        print("默认只构建HTML，不生成语音。语音应该在推送前单独生成。")
+    else:
+        # Default: just build HTML, warn if audio missing
+        reports = scan_reports()
 
-    # Re-scan to update has_audio flags
-    reports = scan_reports()
+        # Quick check: report missing audio (don't block, just warn)
+        missing_audio = [r for r in reports if not r['has_audio']]
+        if missing_audio:
+            print(f"\n⚠️ 注意: {len(missing_audio)} 份报告缺少语音 ({', '.join(r['date'] for r in missing_audio)})")
+            print("   提示: 运行 'python3 build.py --tts' 生成语音\n")
 
-    build_all(reports)
+        build_all(reports)
