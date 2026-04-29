@@ -361,28 +361,18 @@ def build_all(reports):
 if __name__ == '__main__':
     import sys
 
-    # Parse command line args
-    if '--tts' in sys.argv or '--generate-audio' in sys.argv:
-        # Force TTS generation mode
-        print("🎙️ TTS语音生成模式")
-        reports = scan_reports()
+    # 核心原则：TTS必须同步生成，确保每次推送都带音频
+    # 绝不能放后台或分离执行——之前就是因为后台进程被杀导致音频丢失
+    reports = scan_reports()
+
+    # 为缺少音频的报告生成TTS（同步，阻塞式）
+    missing_audio = [r for r in reports if not r['has_audio']]
+    if missing_audio:
+        print(f"\n🎙️ 检测到 {len(missing_audio)} 份报告缺少语音，开始生成...")
         generate_all_tts(reports)
+        # 重新扫描更新has_audio标记
         reports = scan_reports()
-        build_all(reports)
-    elif '--help' in sys.argv or '-h' in sys.argv:
-        print("用法: python3 build.py [选项]")
-        print("  --tts, --generate-audio  为缺少语音的报告生成TTS")
-        print("  --help, -h               显示帮助信息")
-        print("")
-        print("默认只构建HTML，不生成语音。语音应该在推送前单独生成。")
     else:
-        # Default: just build HTML, warn if audio missing
-        reports = scan_reports()
+        print("\n🎙️ 所有报告都已有语音")
 
-        # Quick check: report missing audio (don't block, just warn)
-        missing_audio = [r for r in reports if not r['has_audio']]
-        if missing_audio:
-            print(f"\n⚠️ 注意: {len(missing_audio)} 份报告缺少语音 ({', '.join(r['date'] for r in missing_audio)})")
-            print("   提示: 运行 'python3 build.py --tts' 生成语音\n")
-
-        build_all(reports)
+    build_all(reports)
