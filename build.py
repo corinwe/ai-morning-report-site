@@ -169,9 +169,9 @@ def md_to_speech_text(filepath):
             sub_title = sub_lines[0].strip()
             sub_title = re.sub(r'\*\*', '', sub_title)
 
-            # Skip pure number titles like "1.1"
-            if re.match(r'^\d+\.\d+\s*', sub_title):
-                sub_title_clean = re.sub(r'^\d+\.\d+\s*', '', sub_title)
+            # Add all ### subsection titles (not just numbered ones)
+            if sub_title and not sub_title.startswith('|'):
+                sub_title_clean = re.sub(r'^\d+(\.\d+)*\s*', '', sub_title)
                 if sub_title_clean:
                     speech += f"\n{sub_title_clean}。"
 
@@ -205,6 +205,12 @@ def md_to_speech_text(filepath):
                     item = re.sub(r'\*\*', '', item)
                     if item:
                         speech += f"{item}。"
+                else:
+                    # Plain paragraph — read the full text (no dropping!)
+                    para = re.sub(r'\*\*', '', line)
+                    para = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', para)
+                    if para.strip():
+                        speech += f"{para.strip()}。"
 
     # Clean up any remaining markdown
     speech = re.sub(r'\*\*', '', speech)
