@@ -1,75 +1,22 @@
 {
-  "_note": "官网映射（2026-10-12 由 curl 核验）：verified=200 且页面标题命中品牌词；403/202 = 反爬拦截但域名为官方；未列入者由 Brave 检索 + 标题校验兜底，校验不过则写“未取到（未核实）”，绝不猜。",
-  "ChatGPT": {
-    "url": "https://chatgpt.com",
-    "verified": "403 反爬 · OpenAI 官方域名"
-  },
-  "New Bing": {
-    "url": "https://www.bing.com",
-    "verified": "200"
-  },
-  "Gemini": {
-    "url": "https://gemini.google.com",
-    "verified": "200"
-  },
-  "Claude｜Anthropic": {
-    "url": "https://claude.ai",
-    "verified": "403 反爬 · Anthropic 官方域名"
-  },
-  "DeepSeek": {
-    "url": "https://chat.deepseek.com",
-    "verified": "202 反爬 · 官方域名"
-  },
-  "Github Copilot": {
-    "url": "https://github.com/features/copilot",
-    "verified": "200"
-  },
-  "notebooklm": {
-    "url": "https://notebooklm.google.com",
-    "verified": "200 · 页面标题现为 Gemini Notebook"
-  },
-  "Grok": {
-    "url": "https://grok.com",
-    "verified": "200"
-  },
-  "Character AI": {
-    "url": "https://character.ai",
-    "verified": "403 反爬 · 官方域名"
-  },
-  "纳米AI搜索": {
-    "url": "https://www.n.cn",
-    "verified": "200"
-  },
-  "纳米AI": {
-    "url": "https://www.n.cn",
-    "verified": "200"
-  },
-  "豆包｜抖音": {
-    "url": "https://www.doubao.com",
-    "verified": "200"
-  },
-  "AI 搜索｜百度": {
-    "url": "https://chat.baidu.com",
-    "verified": "200"
-  },
-  "千问 qianwen.com｜阿里": {
-    "url": "https://www.qianwen.com",
-    "verified": "200"
-  },
-  "Kimi｜月之暗面": {
-    "url": "https://kimi.moonshot.cn",
-    "verified": "200"
-  },
-  "Qwen.ai｜阿里": {
-    "url": "https://chat.qwen.ai",
-    "verified": "200"
-  },
-  "百度文库": {
-    "url": "https://wenku.baidu.com",
-    "verified": "200"
-  },
-  "腾讯元宝": {
-    "url": "https://yuanbao.tencent.com",
-    "verified": "200"
-  }
+  "_note": "官网映射（2026-10-12 经 curl 核验）：verified=200 且页面标题命中品牌词；403/202 = 反爬拦截但域名为官方；标“未能确认”者不展示为官网（宁缺勿错，不猜）。",
+  "ChatGPT": { "url": "https://chatgpt.com", "verified": "已核验 · 403 反爬（OpenAI 官方域名）" },
+  "New Bing": { "url": "https://www.bing.com", "verified": "已核验 · 200" },
+  "Gemini": { "url": "https://gemini.google.com", "verified": "已核验 · 200" },
+  "Claude｜Anthropic": { "url": "https://claude.ai", "verified": "已核验 · 403 反爬（Anthropic 官方域名）" },
+  "DeepSeek": { "url": "https://chat.deepseek.com", "verified": "已核验 · 202 反爬（官方域名）" },
+  "Github Copilot": { "url": "https://github.com/features/copilot", "verified": "已核验 · 200" },
+  "notebooklm": { "url": "https://notebooklm.google.com", "verified": "已核验 · 200（页面标题现为 Gemini Notebook）" },
+  "Grok": { "url": "https://grok.com", "verified": "已核验 · 200" },
+  "Character AI": { "url": "https://character.ai", "verified": "已核验 · 403 反爬（官方域名）" },
+  "纳米AI搜索": { "url": "https://www.n.cn", "verified": "已核验 · 200" },
+  "纳米AI": { "url": "https://www.n.cn", "verified": "已核验 · 200" },
+  "豆包｜抖音": { "url": "https://www.doubao.com", "verified": "已核验 · 200" },
+  "AI 搜索｜百度": { "url": "https://chat.baidu.com", "verified": "已核验 · 200" },
+  "千问 qianwen.com｜阿里": { "url": "https://www.qianwen.com", "verified": "已核验 · 200" },
+  "Kimi｜月之暗面": { "url": "https://kimi.moonshot.cn", "verified": "已核验 · 200" },
+  "Qwen.ai｜阿里": { "url": "https://chat.qwen.ai", "verified": "已核验 · 200" },
+  "百度文库": { "url": "https://wenku.baidu.com", "verified": "已核验 · 200" },
+  "腾讯元宝": { "url": "https://yuanbao.tencent.com", "verified": "已核验 · 200" },
+  "Shop": { "url": "", "verified": "未能确认 · AICPB 榜单名过泛（疑似 Shopify Shop App），需人工核实" }
 }

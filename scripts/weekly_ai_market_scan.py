@@ -173,7 +173,7 @@ def official_site(name: str) -> tuple[str, str]:
     except Exception:
         m = {}
     if name in m and isinstance(m[name], dict):
-        return m[name].get("url", ""), f"已核验（{m[name].get('verified', '?')}）"
+        return m[name].get("url", ""), str(m[name].get("verified", "未核实"))
     url = _brave_official(name)
     return (url, "检索+标题校验通过") if url else ("", "未核实（未取到可信官网）")
 
@@ -257,7 +257,8 @@ def enrich_one(item: tuple[int, str, str], list_name: str) -> dict:
     facts["site"] = site
     facts["site_verify"] = verify
     facts["meta"] = site_meta(site) if site else ""
-    snips = brave(f"{name} 产品 功能 优势 商业模式", count=2, typ="web")
+    GENERIC = {"shop", "ai", "纳米ai", "纳米ai搜索"}
+    snips = [] if name.lower() in GENERIC else brave(f"{name} 产品 功能 优势 商业模式", count=2, typ="web")
     facts["snippets"] = " ｜ ".join(f"{s['title']}：{s['snippet']}" for s in snips if s.get("snippet"))[:500]
     facts.update(llm_analyze(facts))
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
