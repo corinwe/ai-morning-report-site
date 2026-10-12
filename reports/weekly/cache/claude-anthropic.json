@@ -3,7 +3,7 @@
  "rank": "全球总榜 #4",
  "aicpb_url": "https://www.aicpb.com/zh/product/Claude｜Anthropic/webid1D6F37489#product",
  "site": "https://claude.ai",
- "site_verify": "已核验（403 反爬（Anthropic 官方域名））",
+ "site_verify": "已核验 · 403 反爬（Anthropic 官方域名）",
  "meta": "",
  "snippets": "Anthropic Claude 全面解析：模型費用、功能與 ChatGPT、Gemini 大比拚：在市場競爭方面，Claude 以其強大的長文本處理能力和指令遵循度脫穎而出；ChatGPT 在通用性能和影像生成方面表現出色；而 Google 的 Gemini 則在 Google Workspace 整合方面具有優勢。值得注意的是，Anthropic 的新 tokenizer（從 Claude 4.7 版本開始採用）會使相同文本產生約 30% 更多的 Token，這將影響實際成本計算。 ｜ Claude 的优势深度解析：大模型竞争格局中的隐藏护城河_claude 优势-CSDN博客：Claude凭借专注工程师需求的产品定位脱颖而出，其超大上下文窗口能处理完整项目代码，工程工具链成熟度领先行业。相比通用型AI，Claude专精系统级代码理解，成为开发者高效工具。国内用户可通过一站式API平台稳定调用Claude等海外模型，享受无需翻墙、统一管理、成本优化等优势，专注开发而无需折腾API接入。这种专业定位+便捷访问的组合，使Claude成为当前开发者值得选择的AI助手。 ...",
  "strength": "Claude 主打长文本处理与指令遵循，能容纳完整项目代码等大体量输入，并围绕开发者需求构建较成熟的工程工具链，在系统级代码理解上强于通用型助手。",

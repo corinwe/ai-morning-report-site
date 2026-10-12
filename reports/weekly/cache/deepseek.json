@@ -5,7 +5,7 @@
  "desc": "DeepSeek｜AI产品榜（AICPB） AI 榜单 提交 公众号 大会 会客室 X(Twitter) 李榜主微信 DeepSeek Chat with DeepSeek AI. DeepSeek",
  "stat": "Webstie 访问量 483.80M（第 1 名）",
  "site": "https://chat.deepseek.com",
- "site_verify": "已核验（202 反爬（官方域名））",
+ "site_verify": "已核验 · 202 反爬（官方域名）",
  "meta": "",
  "snippets": "DeepSeek盈利模式与商业应用分析_deepseek商业模式-CSDN博客：云服务与API调用 类似其他开源模型的商业化路径，DeepSeek可能通过云托管服务或按需调用API收费。例如，义乌商家使用的“小商AI视创”等工具接入了DeepSeek的功能，背后可能涉及API调用或算力租赁的付费模式14。 · 生态合作与硬件捆绑 部分商家以“本地部署”为名销售高配置硬件（如支持模型运行的显卡主机），DeepSeek虽未直接参与，但开源生态可能吸引硬件厂商合作，形成技术-硬件协 ｜ DeepSeek开源周背后的思考：榨干硬件每一滴性能：虽然未来大小参数模型将并存，但 DeepSeek 开源的 MoE 架构在超大参数模型部署上具有天然优势，可能会引领超大模型发展方向； · DeepSeek 带火一体机，其背后逻辑在于简化交付、避免硬件异构性问题，提升商业模式效率，也反映了 AI 服务交付模式的转变。",
  "strength": "DeepSeek 是对话式 AI 助手，核心能力为通用问答与内容生成，并开源 MoE 架构模型。相对同类，其优势在于开源生态与超大参数模型部署效率，支持本地化部署和一体机交付，降低硬件异构门槛。",
