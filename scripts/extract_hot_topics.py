@@ -183,6 +183,8 @@ def new_terms(text: str, limit: int = 3):
         s = re.sub(r'^[-*]\s*', '', s)
         s = s.replace('🆕', '').strip()
         s = re.sub(r'^\*\*|\*\*$', '', s).strip()
+        if any(k in s for k in ['政策', '监管', '融资', '估值', '并购', '收购']):
+            continue
         if len(s) > 4:
             terms.append(s[:140])
     out, seen = [], set()
