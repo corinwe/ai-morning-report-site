@@ -20,7 +20,7 @@ from pathlib import Path
 REQUIRED = [
     ('一', ('今日重磅', '头条')),
     ('二', ('模型',)),
-    ('三', ('云竹热点', '热点技术')),
+    ('三', ('云车热点', '热点技术')),
     ('四', ('创业', '商业')),
     ('五', ('中国',)),
     ('六', ('关键信号',)),
@@ -146,9 +146,9 @@ def check(text: str, date: str | None = None, lenient: bool = False) -> tuple[li
         src_date = got.group(1) if got else None
         stats['hotspot_date'] = src_date
         if not src_date:
-            (warnings if lenient else errors).append('云竹热点缺少“抓取：YYYY-MM-DD”')
+            (warnings if lenient else errors).append('云车热点缺少“抓取：YYYY-MM-DD”')
         elif src_date != date:
-            (warnings if lenient else errors).append(f'云竹热点隔日：{src_date} != {date}')
+            (warnings if lenient else errors).append(f'云车热点隔日：{src_date} != {date}')
 
     for pat in SENSITIVE:
         if re.search(pat, text, re.I):
@@ -189,7 +189,7 @@ FACT。
 FACT。
 **一句话点评：** 判断。
 
-## 三、云竹热点（AI/数字化科技）
+## 三、云车热点（AI/数字化科技）
 > 来源：HN ｜ 抓取：2026-11-20 ｜ 窗口：过去 36 小时
 ### 1. D（100p / 10c · 11-20）
 - 来源：[HN](https://example.com/1) ｜ [原文](https://example.com/2)

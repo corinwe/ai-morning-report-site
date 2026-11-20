@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "generated_at": "2026-11-20T22:24:10+08:00",
+  "generated_at": "2026-11-20T23:15:15+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
@@ -10,21 +10,10 @@
       "hn_url": "https://news.ycombinator.com/item?id=50563148",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 518,
-      "comments": 245,
+      "points": 522,
+      "comments": 247,
       "published_at": "2026-11-19",
       "category": "研究"
-    },
-    {
-      "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
-      "url": "https://git-aarvin.github.io/mei/",
-      "hn_url": "https://news.ycombinator.com/item?id=50568130",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 356,
-      "comments": 226,
-      "published_at": "2026-11-19",
-      "category": "产品"
     },
     {
       "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
@@ -32,8 +21,30 @@
       "hn_url": "https://news.ycombinator.com/item?id=50572503",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 312,
-      "comments": 213,
+      "points": 361,
+      "comments": 234,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
+      "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+      "url": "https://git-aarvin.github.io/mei/",
+      "hn_url": "https://news.ycombinator.com/item?id=50568130",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 358,
+      "comments": 229,
+      "published_at": "2026-11-19",
+      "category": "产品"
+    },
+    {
+      "title": "Anthropic employee claims general proof of the Riemann Hypothesis [pdf]",
+      "url": "https://alpo.ge/remark.pdf",
+      "hn_url": "https://news.ycombinator.com/item?id=50574968",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 349,
+      "comments": 125,
       "published_at": "2026-11-20",
       "category": "技术"
     },
@@ -43,21 +54,10 @@
       "hn_url": "https://news.ycombinator.com/item?id=50561508",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 263,
-      "comments": 234,
+      "points": 264,
+      "comments": 238,
       "published_at": "2026-11-19",
       "category": "产品"
-    },
-    {
-      "title": "AI isn't replacing your job. It's turning it into low-paid gig work",
-      "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
-      "hn_url": "https://news.ycombinator.com/item?id=50562500",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 141,
-      "comments": 71,
-      "published_at": "2026-11-19",
-      "category": "技术"
     }
   ]
 }

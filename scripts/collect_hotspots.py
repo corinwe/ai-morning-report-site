@@ -142,7 +142,7 @@ def collect(date: str, hours: int = 36, limit: int = 5) -> dict:
 
 def render_md(payload: dict) -> str:
     lines = [
-        '## 三、云竹热点（AI/数字化科技）',
+        '## 三、云车热点（AI/数字化科技）',
         '',
         f"> 来源：{payload['source']} ｜ 抓取：{payload['date']} ｜ 生成：{payload['generated_at']} ｜ 窗口：过去 {payload['window_hours']} 小时 ｜ 只取技术/产品/工程，排除资本/政策/人物/硬件",
         '',
@@ -170,11 +170,15 @@ def main() -> int:
     OUT_MD.mkdir(parents=True, exist_ok=True)
     jp = OUT_JSON / f'{args.date}.json'
     mp = OUT_MD / f'_hotspots_{args.date}.md'
+    content = render_md(payload)
     jp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
-    mp.write_text(render_md(payload), encoding='utf-8')
+    mp.write_text(content, encoding='utf-8')
+    # 稳定入口：下游（云竹）不必猜日期
+    (OUT_JSON / 'latest.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    (OUT_MD / '_hotspots_latest.md').write_text(content, encoding='utf-8')
     print(f'✅ {args.date}: {len(payload["items"])} 条热点')
-    print(f'JSON: {jp}')
-    print(f'MD:   {mp}')
+    print(f'JSON: {jp}  (latest: {OUT_JSON / "latest.json"})')
+    print(f'MD:   {mp}  (latest: {OUT_MD / "_hotspots_latest.md"})')
     for it in payload['items']:
         print(f"- {it['title']} ({it['points']}p/{it['comments']}c)")
     return 0
