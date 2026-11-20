@@ -7,9 +7,10 @@
 | 用途 | 路径 |
 |:--|:--|
 | 结构化 JSON（推荐程序读取） | `/root/ai-morning-report-site/data/hotspots/latest.json` |
-| 最新 Markdown 片段（推荐直接引用） | `/root/ai-morning-report-site/reports/_hotspots_latest.md` |
+| 最新 Markdown（本地） | `/root/ai-morning-report-site/reports/yunche-hotspots.md` |
+| 最新 Markdown（公网） | `https://corinwe.github.io/ai-morning-report-site/reports/yunche-hotspots.md` |
 | 按日期归档 JSON | `/root/ai-morning-report-site/data/hotspots/YYYY-MM-DD.json` |
-| 按日期归档 Markdown | `/root/ai-morning-report-site/reports/_hotspots_YYYY-MM-DD.md` |
+| 按日期归档 Markdown | `/root/ai-morning-report-site/reports/yunche-hotspots-YYYY-MM-DD.md` |
 | 已合入的完整晨报 | `/root/ai-morning-report-site/reports/YYYY-MM-DD.md` 的 `## 三、云车热点（AI/数字化科技）` |
 
 ## JSON 字段

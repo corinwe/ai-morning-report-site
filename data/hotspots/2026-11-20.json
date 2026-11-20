@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "generated_at": "2026-11-20T23:15:15+08:00",
+  "generated_at": "2026-11-20T23:22:42+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
@@ -16,13 +16,24 @@
       "category": "研究"
     },
     {
+      "title": "Anthropic employee claims general proof of the Riemann Hypothesis [pdf]",
+      "url": "https://alpo.ge/remark.pdf",
+      "hn_url": "https://news.ycombinator.com/item?id=50574968",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 411,
+      "comments": 175,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
       "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
       "url": "https://architectlabs.com/blog/frostbite",
       "hn_url": "https://news.ycombinator.com/item?id=50572503",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 361,
-      "comments": 234,
+      "points": 367,
+      "comments": 239,
       "published_at": "2026-11-20",
       "category": "技术"
     },
@@ -33,20 +44,9 @@
       "source": "Hacker News",
       "source_type": "community",
       "points": 358,
-      "comments": 229,
+      "comments": 232,
       "published_at": "2026-11-19",
       "category": "产品"
-    },
-    {
-      "title": "Anthropic employee claims general proof of the Riemann Hypothesis [pdf]",
-      "url": "https://alpo.ge/remark.pdf",
-      "hn_url": "https://news.ycombinator.com/item?id=50574968",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 349,
-      "comments": 125,
-      "published_at": "2026-11-20",
-      "category": "技术"
     },
     {
       "title": "Pete Warden on local AI, open models, voice interfaces, the future of hardware",

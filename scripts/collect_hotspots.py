@@ -173,12 +173,14 @@ def main() -> int:
     content = render_md(payload)
     jp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
     mp.write_text(content, encoding='utf-8')
-    # 稳定入口：下游（云竹）不必猜日期
+    # 稳定入口：下游（云竹）不必猜日期；文件名不带下划线，GitHub Pages 不会忽略
     (OUT_JSON / 'latest.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
     (OUT_MD / '_hotspots_latest.md').write_text(content, encoding='utf-8')
+    (OUT_MD / 'yunche-hotspots.md').write_text(content, encoding='utf-8')
+    (OUT_MD / f'yunche-hotspots-{args.date}.md').write_text(content, encoding='utf-8')
     print(f'✅ {args.date}: {len(payload["items"])} 条热点')
     print(f'JSON: {jp}  (latest: {OUT_JSON / "latest.json"})')
-    print(f'MD:   {mp}  (latest: {OUT_MD / "_hotspots_latest.md"})')
+    print(f'MD:   {mp}  (public: {OUT_MD / "yunche-hotspots.md"})')
     for it in payload['items']:
         print(f"- {it['title']} ({it['points']}p/{it['comments']}c)")
     return 0
