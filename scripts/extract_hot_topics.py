@@ -66,8 +66,8 @@ def _shared_section(text: str, day: str) -> str:
     return '\n'.join(out)
 
 
-def load_text(day: str) -> tuple[str, str]:
-    """当天文件优先；否则用 shared 的当天段落；再补前一天的晚间分析。"""
+def load_text(day: str, include_prev: bool = True) -> tuple[str, str]:
+    """当天文件优先；否则用 shared 的当天段落；include_prev=False 时不补前一天。"""
     parts: list[str] = []
     srcs: list[str] = []
 
@@ -199,7 +199,13 @@ def new_terms(text: str, limit: int = 3):
 
 
 def main():
-    day = sys.argv[1] if len(sys.argv) > 1 else date_cls.today().isoformat()
+    strict = '--strict' in sys.argv
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    day = args[0] if args else date_cls.today().isoformat()
+    if strict and not (KB_DIR / f'{day}.md').exists():
+        print('## 🧪 热点技术（知识库每日研究）\n')
+        print(f'> ⛔ 今日知识库尚未归档：`{KB_DIR / f"{day}.md"}` 不存在；严格模式禁止回退前一天。')
+        return 2
     text, src = load_text(day)
     if not text:
         print('## 🧪 热点技术（知识库每日研究）\n')

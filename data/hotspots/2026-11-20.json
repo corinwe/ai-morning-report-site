@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T22:24:10+08:00",
+  "window_hours": 36,
+  "source": "Hacker News Algolia (past window)",
+  "items": [
+    {
+      "title": "Claude solves two open problems in the physics of black holes",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "hn_url": "https://news.ycombinator.com/item?id=50563148",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 518,
+      "comments": 245,
+      "published_at": "2026-11-19",
+      "category": "研究"
+    },
+    {
+      "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+      "url": "https://git-aarvin.github.io/mei/",
+      "hn_url": "https://news.ycombinator.com/item?id=50568130",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 356,
+      "comments": 226,
+      "published_at": "2026-11-19",
+      "category": "产品"
+    },
+    {
+      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+      "url": "https://architectlabs.com/blog/frostbite",
+      "hn_url": "https://news.ycombinator.com/item?id=50572503",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 312,
+      "comments": 213,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
+      "title": "Pete Warden on local AI, open models, voice interfaces, the future of hardware",
+      "url": "https://thedataexchange.media/pete-warden-moonshine/",
+      "hn_url": "https://news.ycombinator.com/item?id=50561508",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 263,
+      "comments": 234,
+      "published_at": "2026-11-19",
+      "category": "产品"
+    },
+    {
+      "title": "AI isn't replacing your job. It's turning it into low-paid gig work",
+      "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
+      "hn_url": "https://news.ycombinator.com/item?id=50562500",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 141,
+      "comments": 71,
+      "published_at": "2026-11-19",
+      "category": "技术"
+    }
+  ]
+}

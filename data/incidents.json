@@ -1,0 +1,12 @@
+[
+  {
+    "id": "2026-11-20-ai-morning-structure-drift",
+    "date": "2026-11-20",
+    "severity": "P0",
+    "symptom": "AI晨报连续多期缺少一句话点评、今日关键信号、本期晨报核心结论；首页 summary 为空、highlights 抓错；云竹热点为隔日数据；头条含未证实资本数字与敏感内容。",
+    "root_cause": "规范只存在于文档和 prompt，未物理化；云竹扫描是下游而晨报需要上游热点；无结构/证据/时效门禁；周行情与长文挤占 TTS。",
+    "fix": "新增 canonical template、collect_hotspots.py、verify_ai_morning_report.py、check_audio_duration.py；修 build.py summary/highlights；extract_hot_topics 加 --strict；重生成 2026-11-20。",
+    "guard": "scripts/verify_ai_morning_report.py --date <date> 必须在 TTS/build/push 前 exit 0；check_audio_duration.py --max 720；cron prompt 已更新。",
+    "status": "fixed"
+  }
+]

@@ -1,5 +1,9 @@
 # 工程知识库 — 踩坑沉淀 & 最佳实践
 
+> **2026-11-20 起，AI 晨报的唯一结构模板是 `/root/ai-morning-report-site/templates/ai-morning-report.md`。**
+> 本文件保留历史设计说明；实际生成/校验以模板 + `scripts/verify_ai_morning_report.py` 为准。
+
+
 > 本文档记录实际项目中踩过的坑和验证过的最佳实践，供未来同类场景直接复用。
 
 ---

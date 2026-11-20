@@ -68,22 +68,16 @@ def extract_metadata(filepath):
         summary = re.sub(r'\s+', ' ', summary)
         meta['summary'] = summary[:200]
     else:
-        lines = content.split('\n')
-        for i, line in enumerate(lines):
-            if line.startswith('##') and i > 0:
-                para_lines = []
-                for j in range(1, i):
-                    l = lines[j].strip()
-                    if l and not l.startswith('#') and not l.startswith('---'):
-                        para_lines.append(l)
-                    if len(para_lines) >= 2:
-                        break
-                if para_lines:
-                    meta['summary'] = ' '.join(para_lines)[:200]
-                break
+        # 回退：取第一个 ### 标题后的正文段落（旧报告没有“核心结论”时）
+        m = re.search(r'^###\s+([^\n]+)\n+(.+?)(?=\n###\s|\n##\s|\Z)', content, re.M | re.S)
+        if m:
+            para = re.sub(r'\s+', ' ', m.group(2)).strip()
+            para = re.sub(r'^[-*>\s]+', '', para)
+            if para:
+                meta['summary'] = para[:200]
 
     signal_section = re.search(
-        r'##\s*五.*?关键信号(.+?)(?=\n## |\Z)', content, re.DOTALL
+        r'##\s*[^\n]*关键信号[^\n]*\n(.+?)(?=\n## |\Z)', content, re.DOTALL
     )
     if signal_section:
         signals_text = signal_section.group(1)
@@ -94,9 +88,10 @@ def extract_metadata(filepath):
                 meta['highlights'].append({'title': signal_title, 'desc': signal_desc[:80]})
 
     if not meta['highlights']:
-        for m in re.finditer(r'\*\*(.+?)\*\*', content[:5000]):
-            text = m.group(1).strip()
-            if 8 < len(text) < 60 and not text.startswith('|') and not text.startswith('#'):
+        # 旧报告没有关键信号表时，至少用 ### 标题做卡片，不再抓“加粗词”
+        for m in re.finditer(r'^###\s+([^\n]+)', content, re.M):
+            text = re.sub(r'[*_`]', '', m.group(1)).strip()
+            if text and len(text) < 60:
                 meta['highlights'].append({'title': text, 'desc': ''})
                 if len(meta['highlights']) >= 4:
                     break
