@@ -1,41 +1,30 @@
 {
-  "date": "2026-11-20",
-  "generated_at": "2026-11-20T23:22:42+08:00",
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21T08:30:17+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
-    {
-      "title": "Claude solves two open problems in the physics of black holes",
-      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
-      "hn_url": "https://news.ycombinator.com/item?id=50563148",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 522,
-      "comments": 247,
-      "published_at": "2026-11-19",
-      "category": "研究"
-    },
-    {
-      "title": "Anthropic employee claims general proof of the Riemann Hypothesis [pdf]",
-      "url": "https://alpo.ge/remark.pdf",
-      "hn_url": "https://news.ycombinator.com/item?id=50574968",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 411,
-      "comments": 175,
-      "published_at": "2026-11-20",
-      "category": "技术"
-    },
     {
       "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
       "url": "https://architectlabs.com/blog/frostbite",
       "hn_url": "https://news.ycombinator.com/item?id=50572503",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 367,
-      "comments": 239,
+      "points": 615,
+      "comments": 320,
       "published_at": "2026-11-20",
       "category": "技术"
+    },
+    {
+      "title": "Claude solves two open problems in the physics of black holes",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "hn_url": "https://news.ycombinator.com/item?id=50563148",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 552,
+      "comments": 270,
+      "published_at": "2026-11-19",
+      "category": "研究"
     },
     {
       "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
@@ -43,20 +32,31 @@
       "hn_url": "https://news.ycombinator.com/item?id=50568130",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 358,
-      "comments": 232,
+      "points": 365,
+      "comments": 241,
       "published_at": "2026-11-19",
       "category": "产品"
     },
     {
-      "title": "Pete Warden on local AI, open models, voice interfaces, the future of hardware",
-      "url": "https://thedataexchange.media/pete-warden-moonshine/",
-      "hn_url": "https://news.ycombinator.com/item?id=50561508",
+      "title": "If you stop writing code, you also get worse at reviewing it",
+      "url": "https://cekrem.github.io/posts/if-you-stop-writing-code-you-also-get-worse-at-reviewing-it/",
+      "hn_url": "https://news.ycombinator.com/item?id=50573886",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 264,
-      "comments": 238,
-      "published_at": "2026-11-19",
+      "points": 321,
+      "comments": 158,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "url": "https://arxiv.org/abs/2611.21885",
+      "hn_url": "https://news.ycombinator.com/item?id=50577265",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 325,
+      "comments": 106,
+      "published_at": "2026-11-20",
       "category": "产品"
     }
   ]
