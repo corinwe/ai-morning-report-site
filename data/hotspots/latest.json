@@ -1,40 +1,18 @@
 {
-  "date": "2026-11-21",
-  "generated_at": "2026-11-21T08:30:17+08:00",
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22T08:31:17+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
     {
-      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
-      "url": "https://architectlabs.com/blog/frostbite",
-      "hn_url": "https://news.ycombinator.com/item?id=50572503",
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "url": "https://arxiv.org/abs/2611.21885",
+      "hn_url": "https://news.ycombinator.com/item?id=50577265",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 615,
-      "comments": 320,
+      "points": 478,
+      "comments": 141,
       "published_at": "2026-11-20",
-      "category": "技术"
-    },
-    {
-      "title": "Claude solves two open problems in the physics of black holes",
-      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
-      "hn_url": "https://news.ycombinator.com/item?id=50563148",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 552,
-      "comments": 270,
-      "published_at": "2026-11-19",
-      "category": "研究"
-    },
-    {
-      "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
-      "url": "https://git-aarvin.github.io/mei/",
-      "hn_url": "https://news.ycombinator.com/item?id=50568130",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 365,
-      "comments": 241,
-      "published_at": "2026-11-19",
       "category": "产品"
     },
     {
@@ -43,21 +21,43 @@
       "hn_url": "https://news.ycombinator.com/item?id=50573886",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 321,
-      "comments": 158,
+      "points": 377,
+      "comments": 179,
       "published_at": "2026-11-20",
       "category": "技术"
     },
     {
-      "title": "Language Models Can Rewrite Their Own Weights",
-      "url": "https://arxiv.org/abs/2611.21885",
-      "hn_url": "https://news.ycombinator.com/item?id=50577265",
+      "title": "Google workers tell their employer not to punish schools that don't want AI",
+      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+      "hn_url": "https://news.ycombinator.com/item?id=50577901",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 325,
-      "comments": 106,
+      "points": 279,
+      "comments": 226,
       "published_at": "2026-11-20",
-      "category": "产品"
+      "category": "技术"
+    },
+    {
+      "title": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
+      "url": "https://www.masteringemacs.org/article/announcing-dreamcoder",
+      "hn_url": "https://news.ycombinator.com/item?id=50581110",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 272,
+      "comments": 114,
+      "published_at": "2026-11-20",
+      "category": "工程"
+    },
+    {
+      "title": "ClawDOS – An AI coding agent for DOS",
+      "url": "http://ricapar.net/ClawDOS/",
+      "hn_url": "https://news.ycombinator.com/item?id=50586292",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 157,
+      "comments": 50,
+      "published_at": "2026-11-21",
+      "category": "工程"
     }
   ]
 }

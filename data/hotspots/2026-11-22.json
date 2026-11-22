@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22T08:31:17+08:00",
+  "window_hours": 36,
+  "source": "Hacker News Algolia (past window)",
+  "items": [
+    {
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "url": "https://arxiv.org/abs/2611.21885",
+      "hn_url": "https://news.ycombinator.com/item?id=50577265",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 478,
+      "comments": 141,
+      "published_at": "2026-11-20",
+      "category": "产品"
+    },
+    {
+      "title": "If you stop writing code, you also get worse at reviewing it",
+      "url": "https://cekrem.github.io/posts/if-you-stop-writing-code-you-also-get-worse-at-reviewing-it/",
+      "hn_url": "https://news.ycombinator.com/item?id=50573886",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 377,
+      "comments": 179,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
+      "title": "Google workers tell their employer not to punish schools that don't want AI",
+      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+      "hn_url": "https://news.ycombinator.com/item?id=50577901",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 279,
+      "comments": 226,
+      "published_at": "2026-11-20",
+      "category": "技术"
+    },
+    {
+      "title": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
+      "url": "https://www.masteringemacs.org/article/announcing-dreamcoder",
+      "hn_url": "https://news.ycombinator.com/item?id=50581110",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 272,
+      "comments": 114,
+      "published_at": "2026-11-20",
+      "category": "工程"
+    },
+    {
+      "title": "ClawDOS – An AI coding agent for DOS",
+      "url": "http://ricapar.net/ClawDOS/",
+      "hn_url": "https://news.ycombinator.com/item?id=50586292",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 157,
+      "comments": 50,
+      "published_at": "2026-11-21",
+      "category": "工程"
+    }
+  ]
+}
