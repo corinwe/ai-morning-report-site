@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T08:30:37+08:00",
+  "window_hours": 36,
+  "source": "Hacker News Algolia (past window)",
+  "items": [
+    {
+      "title": "Dario is hyping the dangers so OSS models are illegal and he stays in control",
+      "url": "https://twitter.com/ylecun/status/2124550037912920090",
+      "hn_url": "https://news.ycombinator.com/item?id=50615308",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 1043,
+      "comments": 602,
+      "published_at": "2026-11-23",
+      "category": "产品"
+    },
+    {
+      "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
+      "url": "https://z.ai/blog/glm-5.4",
+      "hn_url": "https://news.ycombinator.com/item?id=50609685",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 1033,
+      "comments": 338,
+      "published_at": "2026-11-23",
+      "category": "工程"
+    },
+    {
+      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+      "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "hn_url": "https://news.ycombinator.com/item?id=50603845",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 743,
+      "comments": 297,
+      "published_at": "2026-11-22",
+      "category": "技术"
+    },
+    {
+      "title": "Show HN: I built a game where you are an LLM's subagent",
+      "url": "https://github.com/gulivan/worker755",
+      "hn_url": "https://news.ycombinator.com/item?id=50599762",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 357,
+      "comments": 89,
+      "published_at": "2026-11-22",
+      "category": "产品"
+    },
+    {
+      "title": "Agent swarm trying to solve P vs. NP",
+      "url": "https://pequalnp.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50604314",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 184,
+      "comments": 160,
+      "published_at": "2026-11-22",
+      "category": "产品"
+    }
+  ]
+}
