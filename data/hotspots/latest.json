@@ -1,63 +1,63 @@
 {
-  "date": "2026-11-24",
-  "generated_at": "2026-11-24T08:30:37+08:00",
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T08:30:30+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
     {
-      "title": "Dario is hyping the dangers so OSS models are illegal and he stays in control",
+      "title": "\"Dario is hyping the dangers so OSS models are illegal and he stays in control\"",
       "url": "https://twitter.com/ylecun/status/2124550037912920090",
       "hn_url": "https://news.ycombinator.com/item?id=50615308",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 1043,
-      "comments": 602,
+      "points": 1982,
+      "comments": 1167,
       "published_at": "2026-11-23",
       "category": "产品"
     },
     {
-      "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
-      "url": "https://z.ai/blog/glm-5.4",
-      "hn_url": "https://news.ycombinator.com/item?id=50609685",
+      "title": "LLM agents work for their parent companies, not for you",
+      "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+      "hn_url": "https://news.ycombinator.com/item?id=50627340",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 1033,
-      "comments": 338,
-      "published_at": "2026-11-23",
-      "category": "工程"
+      "points": 885,
+      "comments": 374,
+      "published_at": "2026-11-24",
+      "category": "产品"
     },
     {
-      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
-      "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
-      "hn_url": "https://news.ycombinator.com/item?id=50603845",
+      "title": "Tidal bans AI-generated music",
+      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+      "hn_url": "https://news.ycombinator.com/item?id=50630309",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 743,
-      "comments": 297,
-      "published_at": "2026-11-22",
+      "points": 315,
+      "comments": 299,
+      "published_at": "2026-11-24",
       "category": "技术"
     },
     {
-      "title": "Show HN: I built a game where you are an LLM's subagent",
-      "url": "https://github.com/gulivan/worker755",
-      "hn_url": "https://news.ycombinator.com/item?id=50599762",
+      "title": "Microsoft declares 'Code Red' after historic outage, internal memos show",
+      "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+      "hn_url": "https://news.ycombinator.com/item?id=50631157",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 357,
-      "comments": 89,
-      "published_at": "2026-11-22",
-      "category": "产品"
+      "points": 213,
+      "comments": 187,
+      "published_at": "2026-11-24",
+      "category": "技术"
     },
     {
-      "title": "Agent swarm trying to solve P vs. NP",
-      "url": "https://pequalnp.com/",
-      "hn_url": "https://news.ycombinator.com/item?id=50604314",
+      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+      "url": "https://news.ycombinator.com/item?id=50630809",
+      "hn_url": "https://news.ycombinator.com/item?id=50630809",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 184,
-      "comments": 160,
-      "published_at": "2026-11-22",
-      "category": "产品"
+      "points": 217,
+      "comments": 163,
+      "published_at": "2026-11-24",
+      "category": "研究"
     }
   ]
 }
