@@ -1,29 +1,40 @@
 {
-  "date": "2026-11-25",
-  "generated_at": "2026-11-25T08:30:30+08:00",
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T08:30:29+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
-    {
-      "title": "\"Dario is hyping the dangers so OSS models are illegal and he stays in control\"",
-      "url": "https://twitter.com/ylecun/status/2124550037912920090",
-      "hn_url": "https://news.ycombinator.com/item?id=50615308",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 1982,
-      "comments": 1167,
-      "published_at": "2026-11-23",
-      "category": "产品"
-    },
     {
       "title": "LLM agents work for their parent companies, not for you",
       "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
       "hn_url": "https://news.ycombinator.com/item?id=50627340",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 885,
-      "comments": 374,
+      "points": 999,
+      "comments": 410,
       "published_at": "2026-11-24",
+      "category": "产品"
+    },
+    {
+      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+      "url": "https://news.ycombinator.com/item?id=50630809",
+      "hn_url": "https://news.ycombinator.com/item?id=50630809",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 437,
+      "comments": 336,
+      "published_at": "2026-11-24",
+      "category": "研究"
+    },
+    {
+      "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+      "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+      "hn_url": "https://news.ycombinator.com/item?id=50637686",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 449,
+      "comments": 192,
+      "published_at": "2026-11-25",
       "category": "产品"
     },
     {
@@ -32,32 +43,21 @@
       "hn_url": "https://news.ycombinator.com/item?id=50630309",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 315,
-      "comments": 299,
+      "points": 334,
+      "comments": 330,
       "published_at": "2026-11-24",
       "category": "技术"
     },
     {
-      "title": "Microsoft declares 'Code Red' after historic outage, internal memos show",
-      "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
-      "hn_url": "https://news.ycombinator.com/item?id=50631157",
+      "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+      "url": "https://greydanus.github.io/2026/11/12/pengpt/",
+      "hn_url": "https://news.ycombinator.com/item?id=50637056",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 213,
-      "comments": 187,
-      "published_at": "2026-11-24",
+      "points": 391,
+      "comments": 77,
+      "published_at": "2026-11-25",
       "category": "技术"
-    },
-    {
-      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
-      "url": "https://news.ycombinator.com/item?id=50630809",
-      "hn_url": "https://news.ycombinator.com/item?id=50630809",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 217,
-      "comments": 163,
-      "published_at": "2026-11-24",
-      "category": "研究"
     }
   ]
 }

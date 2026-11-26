@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T08:30:29+08:00",
+  "window_hours": 36,
+  "source": "Hacker News Algolia (past window)",
+  "items": [
+    {
+      "title": "LLM agents work for their parent companies, not for you",
+      "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+      "hn_url": "https://news.ycombinator.com/item?id=50627340",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 999,
+      "comments": 410,
+      "published_at": "2026-11-24",
+      "category": "产品"
+    },
+    {
+      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+      "url": "https://news.ycombinator.com/item?id=50630809",
+      "hn_url": "https://news.ycombinator.com/item?id=50630809",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 437,
+      "comments": 336,
+      "published_at": "2026-11-24",
+      "category": "研究"
+    },
+    {
+      "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+      "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+      "hn_url": "https://news.ycombinator.com/item?id=50637686",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 449,
+      "comments": 192,
+      "published_at": "2026-11-25",
+      "category": "产品"
+    },
+    {
+      "title": "Tidal bans AI-generated music",
+      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+      "hn_url": "https://news.ycombinator.com/item?id=50630309",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 334,
+      "comments": 330,
+      "published_at": "2026-11-24",
+      "category": "技术"
+    },
+    {
+      "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+      "url": "https://greydanus.github.io/2026/11/12/pengpt/",
+      "hn_url": "https://news.ycombinator.com/item?id=50637056",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 391,
+      "comments": 77,
+      "published_at": "2026-11-25",
+      "category": "技术"
+    }
+  ]
+}
