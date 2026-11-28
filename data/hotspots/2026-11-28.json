@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28T08:31:07+08:00",
+  "window_hours": 36,
+  "source": "Hacker News Algolia (past window)",
+  "items": [
+    {
+      "title": "AI made self-hosting fun again",
+      "url": "https://janlukas.blog/posts/ai-self-hosting",
+      "hn_url": "https://news.ycombinator.com/item?id=50660180",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 1097,
+      "comments": 502,
+      "published_at": "2026-11-26",
+      "category": "技术"
+    },
+    {
+      "title": "Group chat where your AI talks behind your back",
+      "url": "https://construct22.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50663595",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 682,
+      "comments": 282,
+      "published_at": "2026-11-27",
+      "category": "技术"
+    },
+    {
+      "title": "Claude sabotaging ML research tasks?",
+      "url": "https://twitter.com/RealAstropulse/status/2126119408997466389",
+      "hn_url": "https://news.ycombinator.com/item?id=50664325",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 570,
+      "comments": 280,
+      "published_at": "2026-11-27",
+      "category": "研究"
+    },
+    {
+      "title": "Michael Nielsen took down his book on neural nets",
+      "url": "https://neuralnetworksanddeeplearning.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50670757",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 360,
+      "comments": 239,
+      "published_at": "2026-11-27",
+      "category": "技术"
+    },
+    {
+      "title": "Tracking Diseases Cured by AI",
+      "url": "https://diseasescuredbyai.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50657307",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 321,
+      "comments": 195,
+      "published_at": "2026-11-26",
+      "category": "技术"
+    }
+  ]
+}

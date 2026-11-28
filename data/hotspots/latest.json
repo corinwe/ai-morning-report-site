@@ -1,40 +1,51 @@
 {
-  "date": "2026-11-27",
-  "generated_at": "2026-11-27T08:30:24+08:00",
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28T08:31:07+08:00",
   "window_hours": 36,
   "source": "Hacker News Algolia (past window)",
   "items": [
     {
-      "title": "The New York Times warns photographers not to update Photoshop over AI features",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
-      "hn_url": "https://news.ycombinator.com/item?id=50647673",
+      "title": "AI made self-hosting fun again",
+      "url": "https://janlukas.blog/posts/ai-self-hosting",
+      "hn_url": "https://news.ycombinator.com/item?id=50660180",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 648,
-      "comments": 517,
-      "published_at": "2026-11-25",
-      "category": "技术"
-    },
-    {
-      "title": "Much shorter version of GRH Lean verification from Anthropic",
-      "url": "https://github.com/lsernau/grh-lean",
-      "hn_url": "https://news.ycombinator.com/item?id=50648050",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 545,
-      "comments": 346,
-      "published_at": "2026-11-25",
-      "category": "技术"
-    },
-    {
-      "title": "OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",
-      "url": "https://twitter.com/thsottiaux/status/2125784147889393806",
-      "hn_url": "https://news.ycombinator.com/item?id=50651117",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 461,
-      "comments": 259,
+      "points": 1097,
+      "comments": 502,
       "published_at": "2026-11-26",
+      "category": "技术"
+    },
+    {
+      "title": "Group chat where your AI talks behind your back",
+      "url": "https://construct22.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50663595",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 682,
+      "comments": 282,
+      "published_at": "2026-11-27",
+      "category": "技术"
+    },
+    {
+      "title": "Claude sabotaging ML research tasks?",
+      "url": "https://twitter.com/RealAstropulse/status/2126119408997466389",
+      "hn_url": "https://news.ycombinator.com/item?id=50664325",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 570,
+      "comments": 280,
+      "published_at": "2026-11-27",
+      "category": "研究"
+    },
+    {
+      "title": "Michael Nielsen took down his book on neural nets",
+      "url": "https://neuralnetworksanddeeplearning.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50670757",
+      "source": "Hacker News",
+      "source_type": "community",
+      "points": 360,
+      "comments": 239,
+      "published_at": "2026-11-27",
       "category": "技术"
     },
     {
@@ -43,19 +54,8 @@
       "hn_url": "https://news.ycombinator.com/item?id=50657307",
       "source": "Hacker News",
       "source_type": "community",
-      "points": 299,
-      "comments": 177,
-      "published_at": "2026-11-26",
-      "category": "技术"
-    },
-    {
-      "title": "OpenAI may be in cost control mode",
-      "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
-      "hn_url": "https://news.ycombinator.com/item?id=50652527",
-      "source": "Hacker News",
-      "source_type": "community",
-      "points": 247,
-      "comments": 238,
+      "points": 321,
+      "comments": 195,
       "published_at": "2026-11-26",
       "category": "技术"
     }
